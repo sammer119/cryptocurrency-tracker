@@ -39,6 +39,7 @@
     display: flex;
     text-align: right;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -59,9 +60,9 @@
 }
 
 .red {
-    color: #f00606;
+    color: #f04646;
 }
 
 .green {
-    color: #11d811;
+    color: #1dca1d;
 }

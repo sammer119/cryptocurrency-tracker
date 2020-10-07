@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    background-color: #1a1a1c;
+    background-color: #2c2c2c;
     color: white;
 }
 
@@ -47,4 +47,78 @@
 
 .coin-input::placeholder {
     color: #e2e2e2;
+}
+
+.coin-top {
+    display: flex;
+    justify-content: center;
+}
+
+.coin-rowMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80px;
+    border-bottom: 2px solid #d7d7d7;
+    width: 900px;
+}
+
+.coinMain {
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+    min-width: 300px;
+}
+
+.coinMain h1 {
+    font-size: 16px;
+    width: 150px;
+}
+
+.coinMain img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.coin-symbolMain {
+    display: flex;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+.coin-dataMain {
+    display: flex;
+    text-align: right;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.coin-priceMain {
+    width: 110px;
+    font-weight: bold;
+}
+
+.coin-volumeMain {
+    width: 155px;
+    font-weight: bold;
+}
+
+.coin-percentMain {
+    width: 110px;
+    font-weight: bold;
+}
+
+.coin-marketcapMain {
+    width: 220px;
+    font-weight: bold;
+}
+.redMain {
+    color: #f04646;
+}
+
+.greenMain {
+    color: #1dca1d;
 }

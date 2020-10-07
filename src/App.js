@@ -42,6 +42,21 @@ function App() {
                     />
                 </form>
             </div>
+            <div className="coin-top">
+                <div className="coin-rowMain">
+                    <div className="coinMain">
+                        {/* <img src={filteredCoins[0].image} alt="crypto" /> */}
+                        <h1>Name</h1>
+                        <p className="coin-symbolMain">Symbol</p>
+                    </div>
+                    <div className="coin-dataMain">
+                        <p className="coin-priceMain">Price</p>
+                        <p className="coin-volumeMain">Total Volume</p>
+                        <p className="coin-percentMain">Change</p>
+                        <p className="coin-marketcapMain">Market Cap</p>
+                    </div>
+                </div>
+            </div>
             {filteredCoins.map((coin) => {
                 return (
                     <Coin
