@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "./App.css";
+import Coin from "./Coin";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [coins, setCoins] = useState([]);
+    const [search, setSearch] = useState("");
+
+    useEffect(() => {
+        axios
+            .get(
+                "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+            )
+            .then((response) => {
+                setCoins(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    const handleChange = (e) => {
+        setSearch(e.target.value);
+    };
+
+    const filteredCoins = coins.filter((coin) =>
+        coin.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    return (
+        <div className="coin-app">
+            <div className="coin-search">
+                <h1 className="coin-text">Search a Cryptocurrency</h1>
+                <form>
+                    <input
+                        onChange={handleChange}
+                        type="text"
+                        placeholder="Search..."
+                        className="coin-input"
+                    />
+                </form>
+            </div>
+            {filteredCoins.map((coin) => {
+                return (
+                    <Coin
+                        key={coin.id}
+                        name={coin.name}
+                        price={coin.current_price}
+                        image={coin.image}
+                        symbol={coin.symbol}
+                        volume={coin.total_volume}
+                        priceChange={coin.price_change_percentage_24h}
+                        marketCap={coin.market_cap}
+                    />
+                );
+            })}
+        </div>
+    );
 }
 
 export default App;
