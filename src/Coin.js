@@ -12,7 +12,7 @@ function Coin({ image, name, symbol, price, volume, priceChange, marketCap }) {
                         <p className="coin-symbol">{symbol}</p>
                     </div>
                     <div className="coin-data">
-                        <p className="coin-price">£{price}</p>
+                        <p className="coin-price">£{price.toFixed(2)}</p>
                         <p className="coin-volume">
                             £{volume.toLocaleString()}
                         </p>
@@ -21,10 +21,10 @@ function Coin({ image, name, symbol, price, volume, priceChange, marketCap }) {
                                 {priceChange.toFixed(2)}%
                             </p>
                         ) : (
-                            <p className="coin-percent green">
-                                {priceChange.toFixed(2)}%
-                            </p>
-                        )}
+                                <p className="coin-percent green">
+                                    {priceChange.toFixed(2)}%
+                                </p>
+                            )}
                         <p className="coin-marketcap">
                             £{marketCap.toLocaleString()}
                         </p>

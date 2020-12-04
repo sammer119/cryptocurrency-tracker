@@ -4,6 +4,12 @@ import axios from "axios";
 import "./App.css";
 import Coin from "./Coin";
 
+//
+
+console.log("yeet");
+
+//
+
 function App() {
     const [coins, setCoins] = useState([]);
     const [search, setSearch] = useState("");
